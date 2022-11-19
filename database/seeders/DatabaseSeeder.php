@@ -23,12 +23,16 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $user = User::factory()->create();
+
         Schedule::factory()
             ->count(25)
+            ->for($user)
             ->create();
 
         Stadium::factory()
             ->count(25)
+            ->for($user)
             ->create();
 
         Game::factory()
@@ -47,16 +51,14 @@ class DatabaseSeeder extends Seeder
             ]);
         }
 
-        foreach (User::all() as $user) {
-            $user
-                ->actions()
-                ->attach(
-                    Action::query()
-                        ->inRandomOrder()
-                        ->take(1)
-                        ->firstOrFail()
-                        ->id,
-                );
-        }
+        User::first()
+            ->actions()
+            ->attach(
+                Action::query()
+                    ->inRandomOrder()
+                    ->take(1)
+                    ->firstOrFail()
+                    ->id,
+            );
     }
 }

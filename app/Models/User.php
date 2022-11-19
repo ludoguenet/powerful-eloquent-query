@@ -46,7 +46,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function stadiums(): HasMany
+    public function stadia(): HasMany
     {
         return $this->hasMany(Stadium::class);
     }

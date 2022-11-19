@@ -21,7 +21,6 @@ class ScheduleFactory extends Factory
     {
         return [
             'event_at' => $this->faker->dateTime(),
-            'user_id' => User::factory(),
         ];
     }
 }

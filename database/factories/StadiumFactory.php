@@ -20,10 +20,9 @@ class StadiumFactory extends Factory
     public function definition()
     {
         return [
-            'spectators' => $this->faker->randomNumber(),
-            'square_metre' => $this->faker->randomNumber(),
+            'spectators' => $this->faker->randomNumber(6),
+            'square_metre' => $this->faker->randomNumber(6),
             'doors_closed' => $this->faker->boolean(),
-            'user_id' => User::factory(),
         ];
     }
 }
