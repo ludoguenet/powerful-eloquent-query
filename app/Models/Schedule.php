@@ -13,6 +13,10 @@ class Schedule extends Model
 {
     use HasFactory;
 
+    protected $dates = [
+        'event_at',
+    ];
+
     public function games(): HasMany
     {
         return $this->hasMany(Game::class);

@@ -13,6 +13,10 @@ class Stadium extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'doors_closed',
+    ];
+
     public function games(): HasMany
     {
         return $this->hasMany(Game::class);

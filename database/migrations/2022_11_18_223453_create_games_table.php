@@ -18,6 +18,7 @@ return new class extends Migration
 
             $table->foreignId('stadium_id')
                 ->index()
+                ->nullable()
                 ->constrained();
 
             $table->foreignId('city_id')
@@ -26,6 +27,7 @@ return new class extends Migration
 
             $table->foreignId('schedule_id')
                 ->index()
+                ->nullable()
                 ->constrained();
 
             $table->timestamps();

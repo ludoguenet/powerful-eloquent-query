@@ -24,9 +24,7 @@ class GameFactory extends Factory
         return [
             'team_one' => $this->faker->word,
             'team_two' => $this->faker->word,
-            'stadium_id' => Stadium::factory(),
             'city_id' => City::factory(),
-            'schedule_id' => Schedule::factory(),
         ];
     }
 }
